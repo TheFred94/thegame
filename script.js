@@ -7,30 +7,29 @@ const scissors = document.querySelector(".scissors");
 const buttons = document.querySelectorAll("div button");
 
 // When user clicks on a button the computer generates a random number which is associated with a value (rock, paper or scissors)
-buttons.forEach((button) =>
-  button.addEventListener("click", () => {
-    randomNumber();
-  })
-);
+// buttons.forEach((button) => button.addEventListener("click", () => {}));
 
 // Add an eventlistener to the different buttons and defines the user choice as either rock, paper or scissors and then runs the userChooses function
 rock.addEventListener("click", function () {
   userChoice = "rock";
-  userChooses();
   document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
+  document.querySelector("#player2").addEventListener("animationend", randomNumber);
 });
 paper.addEventListener("click", function () {
   userChoice = "paper";
-  userChooses();
   document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
+  document.querySelector("#player2").addEventListener("animationend", randomNumber);
 });
 scissors.addEventListener("click", function () {
   userChoice = "scissors";
-  userChooses();
   document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
+  document.querySelector("#player2").addEventListener("animationend", randomNumber);
 });
 
 // Loads the DOM and runs the start function which generates a random number
@@ -50,27 +49,39 @@ function randomNumber() {
   computerChooses();
 }
 
+function userChooses() {
+  if (userChoice == "rock") {
+    userNumber = "1";
+    document.querySelector("#player1").classList.remove("shake");
+    document.querySelector("#player1").classList.add("rock");
+  } else if (userChoice == "paper") {
+    userNumber = "2";
+    document.querySelector("#player1").classList.remove("shake");
+    document.querySelector("#player1").classList.add("paper");
+  } else if (userChoice == "scissors") {
+    userNumber = "3";
+    document.querySelector("#player1").classList.remove("shake");
+    document.querySelector("#player1").classList.add("scissors");
+  }
+  console.log("user", userChoice);
+}
+
 // The computer chooses a random number and that number is associated to either rock, paper or scissors which is logged in the console.log
 function computerChooses() {
   if (computerNumber == 1) {
     computerChoice = "rock";
+    document.querySelector("#player2").classList.remove("shake");
+    document.querySelector("#player2").classList.add("rock");
   } else if (computerNumber == 2) {
+    document.querySelector("#player2").classList.remove("shake");
+    document.querySelector("#player2").classList.add("paper");
     computerChoice = "paper";
   } else {
+    document.querySelector("#player2").classList.remove("shake");
+    document.querySelector("#player2").classList.add("scissors");
     computerChoice = "scissors";
   }
   console.log("computer", computerChoice);
-}
-
-function userChooses() {
-  if (userChoice == rock) {
-    userNumber = "1";
-  } else if (userChoice == paper) {
-    userNumber = "2";
-  } else if (userChoice == scissors) {
-    userNumber = "3";
-  }
-  console.log("user", userChoice);
   compare();
 }
 
