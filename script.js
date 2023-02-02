@@ -17,14 +17,20 @@ buttons.forEach((button) =>
 rock.addEventListener("click", function () {
   userChoice = "rock";
   userChooses();
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
 });
 paper.addEventListener("click", function () {
   userChoice = "paper";
   userChooses();
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
 });
 scissors.addEventListener("click", function () {
   userChoice = "scissors";
   userChooses();
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
 });
 
 // Loads the DOM and runs the start function which generates a random number
