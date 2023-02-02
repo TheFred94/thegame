@@ -16,5 +16,17 @@ function start() {
 function randomNumber() {
   computerNumber = Math.floor(Math.random() * 3) + 1;
   console.log(computerNumber);
-  //   computerChoice();
+  computerChooses();
+}
+
+// The computer chooses a random number and that number is associated to either rock, paper or scissor which is logged in the console.log
+function computerChooses() {
+  if (computerNumber == 1) {
+    computerChoice = "rock";
+  } else if (computerNumber == 2) {
+    computerChoice = "paper";
+  } else {
+    computerChoice = "scissor";
+  }
+  console.log(computerChoice);
 }
