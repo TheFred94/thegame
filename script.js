@@ -77,9 +77,16 @@ function compare() {
   }
   if ((userChoice == "scissors") & (computerChoice == "paper")) {
     console.log("You win!");
+  }
+  if ((computerChoice == "rock") & (userChoice == "scissors")) {
+    console.log("You Loose!");
+  }
+  if ((computerChoice == "paper") & (userChoice == "rock")) {
+    console.log("You loose!");
+  }
+  if ((computerChoice == "scissors") & (userChoice == "paper")) {
+    console.log("You loose!");
   } else if (userChoice == computerChoice) {
     console.log("Draw!");
-  } else {
-    console.log("Computer wins!");
   }
 }
