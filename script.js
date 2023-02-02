@@ -65,4 +65,21 @@ function userChooses() {
     userNumber = "3";
   }
   console.log("user", userChoice);
+  compare();
+}
+
+function compare() {
+  if ((userChoice == "rock") & (computerChoice == "scissors")) {
+    console.log("You win!");
+  }
+  if ((userChoice == "paper") & (computerChoice == "rock")) {
+    console.log("You win!");
+  }
+  if ((userChoice == "scissors") & (computerChoice == "paper")) {
+    console.log("You win!");
+  } else if (userChoice == computerChoice) {
+    console.log("Draw!");
+  } else {
+    console.log("Computer wins!");
+  }
 }
