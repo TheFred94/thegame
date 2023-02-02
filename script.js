@@ -88,22 +88,29 @@ function computerChooses() {
 function compare() {
   if ((userChoice == "rock") & (computerChoice == "scissors")) {
     console.log("You win!");
+    document.querySelector("#win").classList.remove("hidden");
   }
   if ((userChoice == "paper") & (computerChoice == "rock")) {
     console.log("You win!");
+    document.querySelector("#win").classList.remove("hidden");
   }
   if ((userChoice == "scissors") & (computerChoice == "paper")) {
     console.log("You win!");
+    document.querySelector("#win").classList.remove("hidden");
   }
   if ((computerChoice == "rock") & (userChoice == "scissors")) {
     console.log("You Loose!");
+    document.querySelector("#lose").classList.remove("hidden");
   }
   if ((computerChoice == "paper") & (userChoice == "rock")) {
     console.log("You loose!");
+    document.querySelector("#lose").classList.remove("hidden");
   }
   if ((computerChoice == "scissors") & (userChoice == "paper")) {
     console.log("You loose!");
+    document.querySelector("#lose").classList.remove("hidden");
   } else if (userChoice == computerChoice) {
     console.log("Draw!");
+    document.querySelector("#draw").classList.remove("hidden");
   }
 }
