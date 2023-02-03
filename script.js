@@ -6,10 +6,10 @@ const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const buttons = document.querySelectorAll("div button");
 
-// When user clicks on a button the computer generates a random number which is associated with a value (rock, paper or scissors)
-// buttons.forEach((button) => button.addEventListener("click", () => {}));
-
-// Add an eventlistener to the different buttons and defines the user choice as either rock, paper or scissors and then runs the userChooses function
+// This is where the game starts
+// Firstly we add the class hidden to the text so it dissappers when you click the either of the buttons to play again.
+// Secondly we remove the classes for either rock, paper or scissors on each button.
+// Add an eventlistener to the different buttons and defines the user choice as either rock, paper or scissors and then runs the userChooses function.
 rock.addEventListener("click", function () {
   userChoice = "rock";
   document.querySelector("#win").classList.add("hidden");
@@ -64,6 +64,7 @@ function randomNumber() {
   computerChooses();
 }
 
+// When the function is run it converts userChoice to a number either 1, 2 or 3. This makes sense when the compare function is run in the computerChooses function.
 function userChooses() {
   if (userChoice == "rock") {
     userNumber = "1";
@@ -100,6 +101,8 @@ function computerChooses() {
   compare();
 }
 
+// This compares the two choices and decides who is the winner.
+// The "hidden" class is removed so the correct text shows.
 function compare() {
   if ((userChoice == "rock") & (computerChoice == "scissors")) {
     console.log("You win!");
